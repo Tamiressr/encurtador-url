@@ -10,29 +10,36 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioServiceService } from './service/usuario-service';
+import { UrlServiceService } from './service/url-service';
+
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     UrlListComponent,
     LoginComponent,
     NavBarComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot([
-     { path:'',component:LoginComponent,pathMatch:'full'},
-     {path:'usuarios/:id/urls',component:UrlListComponent},
-     {path:'usuarios',component:UsuarioComponent},
-     {path:'**',component:Error404Component}
+    // RouterModule.forRoot([
+    //  { path:'', component:LoginComponent, pathMatch:'full'},
+    //  {path:'usuarios/:id/urls', component:UrlListComponent},
+    //  {path:'usuarios', component:UsuarioComponent},
+    //  {path:'**', component:Error404Component}
 
-    ]),
-    HttpClientModule
-
+    // ]),
+    //  RouterModule,
+    HttpClientModule,
+    AppRoutingModule
 
   ],
-  providers: [],
+  providers: [UsuarioServiceService, UrlServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
