@@ -5,5 +5,4 @@ export class Url{
   url?: string;
   urlEncurtada?: string;
   data?: string;
-  usuario?: Usuario = new Usuario;
 }

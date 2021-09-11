@@ -19,7 +19,7 @@ senha: string="";
     private usuarioService: UsuarioServiceService,
     private activateRoute:ActivatedRoute
     ){ }
-    
+
   ngOnInit():void{
    // this.usuario.id=+this.activateRoute.snapshot.paramMap.get('id')!;
     //this.retornarUrls(this.usuario.id);
@@ -49,8 +49,4 @@ save():void{
   });
 
 }
-
-
-
-
 }

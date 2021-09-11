@@ -15,7 +15,7 @@ export class UrlListComponent implements OnInit{
   urlOriginal:string="";
 
  urlEncurtada:string="";
- 
+
   constructor(
     private usuarioService: UsuarioServiceService,
     private activateRoute:ActivatedRoute){
@@ -36,13 +36,12 @@ retornarUrls(id:number):any{
   console.log(this._urlsUsuario);
 }
 encurtarUrl():any{
-  /**
-   * this.usuarioService.encurtarUrl( this.usuario.id,this.urlOriginal).subscribe({
+    this.usuarioService.encurtarUrl( this.usuario,this.urlOriginal).subscribe({
     next:url=>{
       this.url=url;
     },error:err=>console.log('Error',err)
   })
-   */
+
 
   console.log(this._urlsUsuario);
 }
