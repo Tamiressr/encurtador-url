@@ -18,7 +18,7 @@ export class UrlListComponent implements OnInit{
  public _reload=false;
 
  private reload() {
-     setTimeout(() => this._reload = true);
+
      this.retornarUrls(this.usuario.id!);
 
  }
@@ -38,7 +38,6 @@ export class UrlListComponent implements OnInit{
 
   }
 retornarUrls(id:number):any{
-
   setTimeout(() => this._reload = true);
   this.usuarioService.retrieveUrls(id).subscribe({
     next:urls=>{
@@ -46,8 +45,6 @@ retornarUrls(id:number):any{
 
     },error:err=>console.log('Error',err)
   })
-
-
   console.log(this._urlsUsuario);
 }
 
